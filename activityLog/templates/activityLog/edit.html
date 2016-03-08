@@ -1,0 +1,16 @@
+{% extends 'activityLog/index.html' %}
+
+{% block content %}
+<form method="post"> {% csrf_token %}
+  <fieldset>
+    <legend>Edit your activity below</legend>
+    <li>Name : <input name="name" type="text" value={{activity.name}}/></li>
+    <li>Description: <textarea cols="30" id="edit-box" name="description" rows="10">{{activity.description}}</textarea></li>
+    <li>Is it done? <input name="done" type="checkbox" value="True"/></li>
+    <li>
+      <input name="save" type="submit" value="Save"/>
+      <span class='glyphicon glyphicon-reset'><input name="" type="reset" value="Reset"/></span>
+    </li>
+  </fieldset>
+</form>
+{% endblock %}

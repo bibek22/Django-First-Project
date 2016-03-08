@@ -1,0 +1,26 @@
+{% extends 'activityLog/index.html' %}
+{% block content %}
+<table>
+  <thead>
+    <th>SN</th>
+    <th>Activity</th>
+    <th>state</th>
+    <th>Description</th>
+    <th>Remarks</th>
+  </thead>
+  {% for activity in activities %}
+  <tbody>
+    <th></th>
+    <th>{{ activity.name }}</th>
+    <th>{{ activity.done }}</th>
+    <th>{{ activity.description }}</th>
+    <th>{{ activity.remarks }}</th>
+  </tbody>
+  {% endfor %}
+  
+</table>
+
+
+{% endblock %}
+
+

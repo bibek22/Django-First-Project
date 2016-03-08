@@ -22,4 +22,5 @@ urlpatterns = [
     # url(r'^$', include('personal.urls')),
     url(r'', include('blog.urls')),
     url(r'^webapp/', include('webapp.urls')),
+    url(r'^todo/', include('activityLog.urls')),
 ]
