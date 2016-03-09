@@ -3,7 +3,6 @@ from django.db import models
 
 # Create your models here.
 class Activity(models.Model):
-    # serial = models.
     name = models.CharField(max_length=10)
     done = False
     description = models.TextField()

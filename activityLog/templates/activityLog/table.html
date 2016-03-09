@@ -2,7 +2,7 @@
 {% block content %}
 <table>
   <thead>
-    <th>SN</th>
+    <th>Sn.</th>
     <th>Activity</th>
     <th>state</th>
     <th>Description</th>
@@ -10,17 +10,15 @@
   </thead>
   {% for activity in activities %}
   <tbody>
-    <th></th>
-    <th>{{ activity.name }}</th>
-    <th>{{ activity.done }}</th>
-    <th>{{ activity.description }}</th>
-    <th>{{ activity.remarks }}</th>
+    <td>{{ forloop.counter }}</td>
+    <td><a class='name' href="{{ activity.id }}/edit">{{ activity.name }}</a></td>
+    <td>{{ activity.done }}</td>
+    <td>{{ activity.description }}</td>
+    <td>{{ activity.remarks }}</td>
+    <td><a href="{% url 'del' id=activity.id %}" class="addbtn">del</a></td>
   </tbody>
+  {% empty %}
+    <p>Sorry, no activities entry. Try adding some!</p>
   {% endfor %}
-  
 </table>
-
-
 {% endblock %}
-
-

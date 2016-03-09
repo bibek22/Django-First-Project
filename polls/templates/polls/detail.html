@@ -8,15 +8,15 @@
   letter-spacing: .1em;
   text-height: 3em;
   margin: 30px 0px 0 15px;
-  
   }
 </style>
 <h1>{{question.question_text}}</h1>
-<form action="" method="post">
+<form action="{% url 'polls:vote' question_id=question.id %}" method="post"> {% csrf_token %}
 <ul>
-  {% for choice in question.choice_set.all %}
-  <li> <input name="answer" type="radio" value='1'/>{{ choice.choice_text }}</li>
+  {% for choice in question.choice_set.all %} 
+  <li> <input name="choice" type="radio" value="{{ choice.id }}"/>{{ choice.id }} {{ choice.choice_text }}</li>
   {% endfor %}
+  <input name="submit" type="submit" value="Vote"/>
   <input type="reset" value="reset"/>
 </form>
 </ul>

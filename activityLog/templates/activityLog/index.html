@@ -4,13 +4,46 @@
     <meta charset="UTF-8"/>
     <title>Tasks Manager</title>
     <link href="../../static/defined.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    
+    <style>
+th {
+    padding: 5px 15px 5px 15px;
+    border: 1px solid silver;
+    color:gray;
+}
+p{
+    color:maroon;
+}
+.addbtn{
+    border: 1px solid green;
+    border-radius: 5px;
+    float: right;
+    text-decoration: none;
+    padding: 0 5px 0 5px;
+    color: green;
+}
+.addbtn:active, .addbtn:focus{
+color: darkgreen;
+background-color: lightgreen;
+}
+    .name {
+        text-decoration: none;
+        text-transform: capitalize;
+        color:teal;
+    }
+    body {
+        margin-left: 30px;
+    }
+    </style>
+
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap&#45;theme.min.css"> -->
     <link href="" rel="stylesheet"/>
   </head>
   <body>
+      <div class='header'>
     <h1>Task Manager </h1>
+    <a href="{% url 'add' %}" class="addbtn">add</a>
+    </div>
     <br/>
     {% block content %}
 
