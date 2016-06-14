@@ -1,29 +1,38 @@
 {% load staticfiles %}
-!DOCTYPE html
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Welcome to Bibek's Blog!</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/blog.css'%}">
-    <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" href="http://s.mlcdn.co/animate.css"> <!-- for animations -->
+    <link rel="stylesheet" href="{% static 'css/blog.css'%}">
+    <link rel="stylesheet" href="{% static 'css/animate.css'%}">
+	  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="{% static 'script/jquery-2.1.js' %}"></script>
+    <script src="{% static 'script/textflow.js' %}"></script>
 </head>
+
 <body>
-    <div class="page-header">
-      {% if user.is_authenticated %}
-      <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-      {% endif %}
-        <h1><a href="/">Django Blog</a></h1>
-    </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
-            </div>
-        </div>
-    </div>
+    <header class="container cover">
+      <!-- {% if user.is_authenticated %} -->
+      <!-- <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> -->
+      <!-- {% endif %} -->
+      <img class="animated fadeInDown circular"  src="{% static 'images/astro.jpg' %}"/>
+      <section class='animated fadeInUp header'>Bibek Gautam</section>
+
+      <section id='liner'> 
+        <p class='animated fadeInUp'>I'm  a programmer and <i class="fa fa-crop"></i> web developer from Nepal.</p>
+      </section>
+
+      
+      <section >
+        <a href="#contents"><i  id= "arrow" class="fa fa-angle-down "></i></a>
+      </section>
+      
+    </header>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>    

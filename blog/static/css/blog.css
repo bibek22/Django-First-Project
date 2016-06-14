@@ -1,60 +1,89 @@
-h1 a {
-    color: 9900FF;
-    font-family: 'Lobster';
+html, body { height: 100%; margin: 0; padding:0;  border-top: 4px solid #111; vertical-align: baseline; }
+
+header, article { display: block; }
+
+body{
+    top: -10%;
+	font-family: "source-sans-pro",sans-serif;
 }
 
-body {
-    padding-left: 15px;
+
+.container {
+	  justify-content: center;
+	  -webkit-justify-content: center;
+    display: flex;
+    justify-content: flex-center;
+    flex-direction: column;
+	  
+	  align-items: center;
+	  -webkit-align-items: center;
+	  
+	  min-height: 97%; 
+	  width: 99%;
+    
+    valign: center;
 }
 
-.post {
-    margin-bottom: 70px;
-}
-
-.page-header {
-    background-color: #00897B;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
-}
-
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
-    text-decoration: none;
+.cover{
+    text-align: center;
+    background-color: #fff;
+    margin-top: .7%; 
 }
 
 .content {
-    margin-left: 40px;
-}
-
-h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
-}
-
-.date {
-    color: #828282;
-    text-align-last: right;
-}
-
-.save {
-    float: right;
-}
-
-.post-form textarea, .post-form input {
+    background-color: #111;
+    height: 100%;
     width: 100%;
 }
 
-.top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 26pt;
-    margin-right: 20px;
+.cover p {
+    font-size: 2.0em;
+    font-weight: 100;
 }
 
-.post h1 a, .post h1 a:visited {
-    color: #000000;
+#arrow {
+    animation-name: arrowDown;
+    animation-duration: 1.4s;
+    -webkit-animation-name: arrowDown;
+    -moz-animation-name: arrowDown;
+    font-size: 3em;
+    height: auto;
+    padding-top: 90%;
+    position: relative;
 }
 
-."glyphicon glyphicon-plus" {
-    bg-color: red;
+.circular {
+    border-radius: 50%;
+    flex-basis: 180px;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    decoration: none;
+}
+
+.header {
+    font-family: "sail";
+    font-size: 6em;
+}
+
+@-moz-keyframes arrowDown {
+    0% { top: -40px; opacity: 0;}
+    60% { top: -40px; opacity: 0;}
+    100% { top: 0px; opacity: 1;}
+}
+
+@-webkit-keyframes arrowDown {
+    0% { top: -40px; opacity: 0;}
+    60% { top: -40px; opacity: 0;}
+    100% { top: 0px; opacity: 1;}
+}
+
+@keyframes arrowDown {
+    0% { top: -60px; opacity: 0;}
+    60% { top: -60px; opacity: 0;}
+    100% { top: 0px; opacity: 1;}
 }
